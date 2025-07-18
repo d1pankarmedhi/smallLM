@@ -1,9 +1,29 @@
-# smallLM
+<div align="center">
+<h1>SmallLM</h1>
+<p>A small, GPT like Language Model</p>
 
-A small, GPT-like Language Model implemented in PyTorch.  
-This project provides a minimal, modular, and extensible framework for training and generating text with transformer-based language models.
+![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white) ![Python](https://img.shields.io/badge/Python-blue.svg?style=flat&logo=python&logoColor=white)
 
----
+</div>
+
+This project provides a minimal, modular, and extensible framework for training and generating text with a transformer-based GPT like language model. It is small language model with close to 14M parameters.
+
+<div align="center">
+<table>
+  <thead>
+    <tr>
+      <th>Model Architecture</th>
+      <th>BPE Tokenization</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://github.com/user-attachments/assets/271fe3e1-07cb-4cbd-a3ea-1f3d32d7d2d3" width="300" /></td>
+      <td><img src="https://github.com/user-attachments/assets/dbcad90f-0d78-4407-a48d-4973027fb9b2" width="300" /></td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 ## Installation
 
@@ -18,8 +38,6 @@ This project provides a minimal, modular, and extensible framework for training 
    ```sh
    pip install -r requirements.txt
    ```
-
----
 
 ## Usage
 
@@ -71,15 +89,11 @@ smallLM/
     └── trainer.py               # Training and plotting utilities
 ```
 
----
-
 ## Customization
 
 - **Model:** Edit `smalllm/model/lm.py` or adjust hyperparameters in `smalllm/config/config.py`.
 - **Tokenizer:** Swap out or extend `smalllm/tokenizer.py` for different tokenization strategies.
 - **Dataset:** Use any plain text file; the loader will handle splitting and batching.
-
----
 
 ## Requirements
 
@@ -95,8 +109,6 @@ For `uv`, use:
 uv add -r requirements.txt
 ```
 
----
-
 ## Example
 
 **Training:**
@@ -111,13 +123,9 @@ python main.py train
 python main.py generate --query "The future of AI is" --max_new_tokens 50 --temperature 1.0
 ```
 
----
-
 ## License
 
 MIT License
-
----
 
 ## Acknowledgements
 
