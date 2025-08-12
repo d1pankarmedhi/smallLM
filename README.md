@@ -95,33 +95,6 @@ smallLM/
 - **Tokenizer:** Swap out or extend `smalllm/tokenizer.py` for different tokenization strategies.
 - **Dataset:** Use any plain text file; the loader will handle splitting and batching.
 
-## Requirements
-
-Install all dependencies with:
-
-```sh
-pip install -r requirements.txt
-```
-
-For `uv`, use:
-
-```sh
-uv add -r requirements.txt
-```
-
-## Example
-
-**Training:**
-
-```sh
-python main.py train
-```
-
-**Generating:**
-
-```sh
-python main.py generate --query "The future of AI is" --max_new_tokens 50 --temperature 1.0
-```
 
 ## License
 
