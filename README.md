@@ -18,8 +18,8 @@ This project provides a minimal, modular, and extensible framework for training 
   </thead>
   <tbody>
     <tr>
-      <td><img src="https://github.com/user-attachments/assets/271fe3e1-07cb-4cbd-a3ea-1f3d32d7d2d3" width="300" /></td>
-      <td><img src="https://github.com/user-attachments/assets/dbcad90f-0d78-4407-a48d-4973027fb9b2" width="300" /></td>
+      <td><img src="https://github.com/user-attachments/assets/271fe3e1-07cb-4cbd-a3ea-1f3d32d7d2d3" width="400" /></td>
+      <td><img src="https://github.com/user-attachments/assets/dbcad90f-0d78-4407-a48d-4973027fb9b2" width="550" /></td>
     </tr>
   </tbody>
 </table>
