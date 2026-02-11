@@ -58,7 +58,7 @@ class Trainer:
         total_loss, count = 0.0, 0
         for xb, yb in self.val_loader:
             xb, yb = xb.to(self.config.device), yb.to(self.config.device)
-            _, loss = self.model(xb, yb)
+            _, loss, _ = self.model(xb, yb)
             total_loss += loss.item()
             count += 1
         return total_loss / count
@@ -79,7 +79,7 @@ class Trainer:
                     if self.config.device == "cuda"
                     else torch.bfloat16,
                 ):
-                    logits, loss = self.model(xb, yb)
+                    logits, loss, _ = self.model(xb, yb)
 
                 self.scaler.scale(loss).backward()
                 torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=0.5)

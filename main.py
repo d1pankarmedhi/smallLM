@@ -36,8 +36,9 @@ def train():
     plot_losses(train_loss, val_loss, config.eval_interval)
 
 
-def generate(query: str, max_new_tokens: int = 100, temperature: float = 1.5):
+def generate(query: str, max_new_tokens: int = 100, temperature: float = 1.5, use_kv_cache: bool = False):
     logger.info("Starting text generation mode.")
+    logger.info(f"KV Cache: {'enabled' if use_kv_cache else 'disabled'}")
 
     model = LanguageModel(config)
     logger.info("LanguageModel initialized.")
@@ -56,6 +57,7 @@ def generate(query: str, max_new_tokens: int = 100, temperature: float = 1.5):
         input_ids=input_ids,
         max_new_tokens=max_new_tokens,
         temperature=temperature,
+        use_kv_cache=use_kv_cache,
     )
 
     output = tokenizer.decode(generated[0].tolist())
@@ -81,6 +83,10 @@ if __name__ == "__main__":
     gen_parser.add_argument(
         "--temperature", type=float, default=1.5, help="Sampling temperature"
     )
+    gen_parser.add_argument(
+        "--use_kv_cache", action="store_true", default=False,
+        help="Enable KV cache for faster generation",
+    )
 
     args = parser.parse_args()
 
@@ -89,4 +95,4 @@ if __name__ == "__main__":
         train()
     elif args.mode == "generate":
         logger.info("CLI: generate mode selected.")
-        generate(args.query, args.max_new_tokens, args.temperature)
+        generate(args.query, args.max_new_tokens, args.temperature, args.use_kv_cache)
